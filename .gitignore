@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Runtime artifacts (the scripts write caches/reports outside the repo,
+# but in case anyone runs them from inside, ignore the obvious ones)
+/cache/
+*.replaced.docx
+*.before-replace.docx
+*.before-sectpr.docx
+thesis_replace_report.md
+thesis_sectpr_report.md
+thesis_render_report.md
