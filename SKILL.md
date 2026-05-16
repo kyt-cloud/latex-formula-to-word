@@ -1,6 +1,6 @@
 ---
-name: thesis-formula-replace
-description: End-to-end pipeline that turns a LaTeX Chinese thesis into a Word docx with native OMML formulas + clean Word layout. Scans TeX, generates placeholder PDF, waits for user to convert PDF→Word, replaces placeholders with OMML, then surgically cleans up PDF→Word sectPr artifacts (Word-specific blank-page bug). Use ONLY when user invokes `/thesis-formula-replace`. Manual trigger; never auto-fire.
+name: latex-formula-to-word
+description: End-to-end pipeline that turns a LaTeX Chinese thesis into a Word docx with native OMML formulas + clean Word layout. Scans TeX, generates placeholder PDF, waits for user to convert PDF→Word, replaces placeholders with OMML, then surgically cleans up PDF→Word sectPr artifacts (Word-specific blank-page bug). Use ONLY when user invokes `/latex-formula-to-word`. Manual trigger; never auto-fire.
 argument-hint: "[optional: project directory; defaults to cwd]"
 allowed-tools: ["Read", "Bash", "Glob", "Edit", "Write", "AskUserQuestion"]
 ---
@@ -26,7 +26,7 @@ End-to-end pipeline for Chinese thesis projects that converts a LaTeX thesis int
 
 Run:
 ```bash
-python3 ~/.claude/skills/thesis-formula-replace/scripts/scan_tex.py \
+python3 ~/.claude/skills/latex-formula-to-word/scripts/scan_tex.py \
   --project <PROJECT_DIR> \
   --tex-entry <MAIN_TEX>      # e.g. thesis.tex
 ```
@@ -67,7 +67,7 @@ Wait for the user to come back with the docx path. Don't try to auto-convert.
 
 Run:
 ```bash
-python3 ~/.claude/skills/thesis-formula-replace/scripts/replace_docx.py \
+python3 ~/.claude/skills/latex-formula-to-word/scripts/replace_docx.py \
   --docx <USER_DOCX> \
   --json <PROJECT>/formula_placeholders.json \
   --out <USER_DOCX_DIR>/<NAME>.replaced.docx
@@ -97,7 +97,7 @@ Output report under `<USER_DOCX_DIR>/thesis_replace_report.md` listing:
 
 Run:
 ```bash
-python3 ~/.claude/skills/thesis-formula-replace/scripts/fix_sectpr.py \
+python3 ~/.claude/skills/latex-formula-to-word/scripts/fix_sectpr.py \
   --docx <USER_DOCX_DIR>/<NAME>.replaced.docx \
   --inplace
 ```
@@ -130,7 +130,7 @@ The default set hard-codes `Heading1, Heading2, Heading3, Title` for templates t
 
 Run:
 ```bash
-python3 ~/.claude/skills/thesis-formula-replace/scripts/verify_render.py \
+python3 ~/.claude/skills/latex-formula-to-word/scripts/verify_render.py \
   --docx <USER_DOCX_DIR>/<NAME>.replaced.docx
 ```
 

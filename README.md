@@ -1,8 +1,8 @@
-# thesis-formula-replace
+# latex-formula-to-word
 
 End-to-end pipeline for converting a Chinese LaTeX thesis into a Word `.docx` where every formula is a **native Word OMML object**, while preserving PDF-consistent layout.
 
-Built as a [Claude Code skill](https://docs.claude.com/en/docs/claude-code/skills). Invoke via `/thesis-formula-replace` inside Claude Code, or run the underlying scripts directly from the command line.
+Built as a [Claude Code skill](https://docs.claude.com/en/docs/claude-code/skills). Invoke via `/latex-formula-to-word` inside Claude Code, or run the underlying scripts directly from the command line.
 
 ## What problem it solves
 
@@ -17,10 +17,10 @@ Converting a LaTeX thesis to Word directly via Pandoc loses page headers, margin
 ## Install
 
 ```bash
-git clone <this-repo> ~/.claude/skills/thesis-formula-replace
+git clone <this-repo> ~/.claude/skills/latex-formula-to-word
 ```
 
-After that, `/thesis-formula-replace` shows up as an available skill in any Claude Code session.
+After that, `/latex-formula-to-word` shows up as an available skill in any Claude Code session.
 
 To use the scripts standalone (without Claude Code), see [Standalone usage](#standalone-usage) below.
 
