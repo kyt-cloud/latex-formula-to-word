@@ -161,6 +161,11 @@ Inside the user's docx directory:
 - Pre-existing OCR alignment errors in the PDF→Word output (e.g., a sentence split mid-word with one half right-aligned) carry through. Not fixed here.
 - Word and LibreOffice paginate slightly differently. LibreOffice fill-rate audit is approximate; the user's Word view is final judgement.
 
+## Contributors
+
+- [**kyt-cloud**](https://github.com/kyt-cloud) — project owner; surfaced the problem from a real Chinese thesis project, drove the requirements, validated each iteration against Word
+- **Claude (Anthropic)** — architected the pipeline, wrote the scripts, and debugged the cross-platform Word/LibreOffice pagination quirks
+
 ## License
 
 MIT
